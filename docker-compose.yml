@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  ecommerce:
+      build:
+          dockerfile: docker/Dockerfile
+          context: .
+      container_name: ecommerce
+      volumes:
+        - ./:/var/www/html
+      networks:
+        - produtction-network
+      ports:
+        - 8888:80
+
+  mysql:
+      image: mysql
+      container_name: mysql
+      environment:
+        - MYSQL_ROOT_PASSWORD=mestre
+      networks:
+        - produtction-network
+
+networks:
+    produtction-network:
+        driver: bridge
