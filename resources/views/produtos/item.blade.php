@@ -66,51 +66,23 @@
 			<!---->
 
 			<div class=" bottom-product">
-				<div class="col-md-4 bottom-cd simpleCart_shelfItem">
-					<div class="product-at ">
-						<a href="#"><img class="img-responsive" src="/images/pi3.jpg" alt="">
-							<div class="pro-grid">
-										<span class="buy-in">Buy Now</span>
-							</div>
-						</a>
+				@foreach($produto->categoria->produtos() as $produto)
+					<div class="col-md-4 bottom-cd simpleCart_shelfItem">
+						<div class="product-at ">
+							<a href="#"><img class="img-responsive" src="{{ $produto->imagens()->first()['link'] }}" alt="">
+								<div class="pro-grid">
+											<span class="buy-in">Comprar</span>
+								</div>
+							</a>
+						</div>
+						<p class="tun"><span>{{ $produto->nome }}</span><br>{{ $produto->categoria }}</p>
+						<div class="ca-rt">
+							<a href="#" class="item_add">
+								<p class="number item_price"><i> </i>R$ {{ $produto->valor }}</p>
+							</a>
+						</div>
 					</div>
-					<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-					<div class="ca-rt">
-						<a href="#" class="item_add">
-							<p class="number item_price"><i> </i>$500.00</p>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4 bottom-cd simpleCart_shelfItem">
-					<div class="product-at ">
-						<a href="#"><img class="img-responsive" src="/images/pi1.jpg" alt="">
-							<div class="pro-grid">
-										<span class="buy-in">Buy Now</span>
-							</div>
-						</a>
-					</div>
-					<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-					<div class="ca-rt">
-						<a href="#" class="item_add">
-							<p class="number item_price"><i> </i>$500.00</p>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4 bottom-cd simpleCart_shelfItem">
-					<div class="product-at ">
-						<a href="#"><img class="img-responsive" src="/images/pi4.jpg" alt="">
-							<div class="pro-grid">
-										<span class="buy-in">Buy Now</span>
-							</div>
-						</a>
-					</div>
-					<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-					<div class="ca-rt">
-						<a href="#" class="item_add">
-							<p class="number item_price"><i> </i>$500.00</p>
-						</a>
-					</div>
-				</div>
+				@endforeach
 				<div class="clearfix"> </div>
 			</div>
 		</div>

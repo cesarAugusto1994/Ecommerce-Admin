@@ -125,45 +125,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a class="color1" href="#">Categorias</a>
 							<div class="mepanel">
 								<div class="row">
-									<div class="col1">
-										<div class="h_nav">
-											<ul>
-												<li><a href="products.html">Bedskirt</a></li>
-												<li><a href="products.html">Blanket/Throw</a></li>
-												<li><a href="products.html">Collection/Duvet</a></li>
-												<li><a href="products.html">Comforter</a></li>
-												<li><a href="products.html">Comforter Set</a></li>
-												<li><a href="products.html">Decorative Pillow</a></li>
-												<li><a href="products.html">Mattress Pad </a></li>
-												<li><a href="products.html">Mattress Topper</a></li>
-												<li><a href="products.html">Pillow</a></li>
-												<li><a href="products.html">Pillow Protector</a></li>
-											</ul>
+									@foreach(\Illuminate\Support\Facades\Cache::get('categorias') as $categoria)
+										<div class="col1">
+											<div class="h_nav">
+												<ul>
+													<li><a href="#">{{ $categoria['nome'] }}</a></li>
+												</ul>
+											</div>
 										</div>
-									</div>
+									@endforeach
 								</div>
 							</div>
 						</li>
 						<li class="grid"><a class="color2" href="#">Marcas</a>
 							<div class="mepanel">
 								<div class="row">
-									<div class="col1">
-										<div class="h_nav">
-											<ul>
-												<li><a href="products.html">Bedskirt</a></li>
-												<li><a href="products.html">Blanket/Throw</a></li>
-												<li><a href="products.html">Collection/Duvet</a></li>
-												<li><a href="products.html">Comforter</a></li>
-												<li><a href="products.html">Comforter Set</a></li>
-												<li><a href="products.html">Decorative Pillow</a></li>
-												<li><a href="products.html">Mattress Pad </a></li>
-												<li><a href="products.html">Mattress Topper</a></li>
-												<li><a href="products.html">Pillow</a></li>
-												<li><a href="products.html">Pillow Protector</a></li>
-
-											</ul>
+									@foreach(\Illuminate\Support\Facades\Cache::get('marcas') as $marca)
+										<div class="col1">
+											<div class="h_nav">
+												<ul>
+													<li><a href="#">{{ $marca['nome'] }}</a></li>
+												</ul>
+											</div>
 										</div>
-									</div>
+									@endforeach
 								</div>
 							</div>
 						</li>
