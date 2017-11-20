@@ -36,39 +36,6 @@
 
 				</div>
 				</div>
-			<div class="col-md-3 prod-rgt">
-				<div class=" pro-tp">
-					<div class="pl-lft">
-						<a href="single.html"><img class="img-responsive" src="/images/l2.jpg" alt=""></a>
-					</div>
-					<div class="pl-rgt">
-						<h6><a href="single.html">TRIBECA LIVING</a></h6>
-						<p><a href="single.html">450$</a></p>
-					</div>
-						<div class="clearfix"></div>
-				</div>
-				<div class=" pro-tp">
-					<div class="pl-lft">
-						<a href="single.html"><img class="img-responsive" src="/images/l3.jpg" alt=""></a>
-					</div>
-					<div class="pl-rgt">
-						<h6><a href="single.html">TRIBECA LIVING</a></h6>
-						<p><a href="single.html">450$</a></p>
-					</div>
-						<div class="clearfix"></div>
-				</div>
-				<div class=" pro-tp">
-					<div class="pl-lft">
-						<a href="single.html"><img class="img-responsive" src="/images/l1.jpg" alt=""></a>
-					</div>
-					<div class="pl-rgt">
-						<h6><a href="single.html">TRIBECA LIVING</a></h6>
-						<p><a href="single.html">450$</a></p>
-					</div>
-						<div class="clearfix"></div>
-				</div>
-
-			</div>
 				<div class="clearfix"></div>
 		</div>
 	</div>
