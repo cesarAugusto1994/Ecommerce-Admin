@@ -16,6 +16,11 @@ class ProdutoController extends Controller
     public function item($id, $nome)
     {
         $produto = Produto::find($id);
-        return view('produtos/item')->with('produto', $produto);
+
+        $sugestoes = Produto::where('ativo', 1)->Take(3)->get();
+
+        return view('produtos/item')
+            ->with('produto', $produto)
+            ->with('sugestoes', $sugestoes);
     }
 }

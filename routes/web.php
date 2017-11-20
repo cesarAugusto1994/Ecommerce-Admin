@@ -31,6 +31,8 @@ Route::post('carrinho/remover', 'CarrinhoController@remover')->name('carrinho_re
 
 Route::post('carrinho/destroy', 'CarrinhoController@destroy')->name('carrinho_destroy');
 
+Route::post('carrinho/finalizar', 'PedidoController@salvar')->name('carrinho_finalizar');
+
 Route::get('conta/{id}', 'UsuariosController@conta')->name('conta');
 
 Route::post('/users/editar/salvar', 'UsuariosController@salvarEdicao')->name('usuarios_salvar_edicao');

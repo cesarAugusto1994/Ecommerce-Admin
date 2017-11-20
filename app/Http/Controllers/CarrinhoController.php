@@ -55,10 +55,8 @@ class CarrinhoController extends Controller
             ]);
         }
 
-        var_dump($cart);
-
         Session::put('cart', $cart);
-        return redirect()->back()->with('notificationText', 'Product Added to Cart Successfully!');
+        return redirect()->back()->with('mensagem', 'Produto Adicionado ao Carrinho!');
     }
 
     public function view()

@@ -66,10 +66,10 @@
 			<!---->
 
 			<div class=" bottom-product">
-				@foreach($produto->categoria->produtos() as $produto)
+				@foreach($sugestoes as $produto)
 					<div class="col-md-4 bottom-cd simpleCart_shelfItem">
 						<div class="product-at ">
-							<a href="#"><img class="img-responsive" src="{{ $produto->imagens()->first()['link'] }}" alt="">
+							<a href="{{ route('item', ['id' => $produto->id,'nome' => $produto->nome]) }}"><img class="img-responsive" src="{{ $produto->imagens()->first()['link'] }}" alt="">
 								<div class="pro-grid">
 											<span class="buy-in">Comprar</span>
 								</div>

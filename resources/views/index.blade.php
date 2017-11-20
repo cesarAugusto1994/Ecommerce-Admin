@@ -59,11 +59,13 @@
                 <div class="content-top-bottom">
                     <h2>DESTAQUES</h2>
                     <div class="col-md-6 men">
-                        <a href="{{ route('item', ['id' => 1, 'nome' => 'Item']) }}"
-                           class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="/images/t1.jpg" alt="">
+                        <a href="{{ route('item', ['id' => $principal->produto->id, 'nome' => $principal->produto->nome]) }}"
+                           class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive"
+                                                                             src="{{ $principal->produto->imagens->first()['link'] }}"
+                                                                             alt="">
                             <div class="b-wrapper">
                                 <h3 class="b-animate b-from-top top-in   b-delay03 ">
-                                    <span>TRIBECA LIVING</span>
+                                    <span>{{ $principal->produto->nome }}</span>
                                 </h3>
                             </div>
                         </a>
@@ -72,11 +74,13 @@
                     <div class="col-md-6">
 
                         <div class="col-md1 ">
-                            <a href="{{ route('item', ['id' => 1, 'nome' => 'Item']) }}"
-                               class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="/images/t2.jpg" alt="">
+                            <a href="{{ route('item', ['id' => $item2->produto->id, 'nome' => $item2->produto->nome]) }}"
+                               class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive"
+                                                                                 src="{{ $item2->produto->imagens->first()['link'] }}"
+                                                                                 alt="">
                                 <div class="b-wrapper">
                                     <h3 class="b-animate b-from-top top-in1   b-delay03 ">
-                                        <span>CLARISSA</span>
+                                        <span>{{ $item2->produto->nome }}</span>
                                     </h3>
                                 </div>
                             </a>
@@ -85,24 +89,26 @@
                         <div class="col-md2">
 
                             <div class="col-md-6 men1">
-                                <a href="{{ route('item', ['id' => 1, 'nome' => 'Item']) }}"
+                                <a href="{{ route('item', ['id' => $item3->produto->id, 'nome' => $item3->produto->nome]) }}"
                                    class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive"
-                                                                                     src="/images/t3.jpg" alt="">
+                                                                                     src="{{ $item3->produto->imagens->first()['link'] }}"
+                                                                                     alt="">
                                     <div class="b-wrapper">
                                         <h3 class="b-animate b-from-top top-in2   b-delay03 ">
-                                            <span>COLORMATE</span>
+                                            <span>{{ $item3->produto->nome }}</span>
                                         </h3>
                                     </div>
                                 </a>
                             </div>
 
                             <div class="col-md-6 men2">
-                                <a href="{{ route('item', ['id' => 1, 'nome' => 'Item']) }}"
+                                <a href="{{ route('item', ['id' => $item4->produto->id, 'nome' => $item4->produto->nome]) }}"
                                    class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive"
-                                                                                     src="/images/t4.jpg" alt="">
+                                                                                     src="{{ $item4->produto->imagens->first()['link'] }}"
+                                                                                     alt="">
                                     <div class="b-wrapper">
                                         <h3 class="b-animate b-from-top top-in2   b-delay03 ">
-                                            <span>HERLEQUIN</span>
+                                            <span>{{ $item4->produto->nome }}</span>
                                         </h3>
                                     </div>
                                 </a>
@@ -120,7 +126,8 @@
                             <div class="col-md-3 grid-top simpleCart_shelfItem">
                                 <a href="{{ route('item', ['id' => $produto->id, 'nome' => $produto->nome]) }}"
                                    class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive"
-                                                                                     src="/images/pi.jpg" alt="">
+                                                                                     src="{{ $produto->imagens->first()['link'] }}"
+                                                                                     alt="">
                                     <div class="b-wrapper">
                                         <h3 class="b-animate b-from-left b-delay03 ">
                                             <span>{{ $produto->nome }}</span>
@@ -137,10 +144,12 @@
                         @endforeach
                         <div class="clearfix"></div>
                     </div>
+                    <div class="clearfix"></div>
                 </div>
             </div>
-            <!----->
         </div>
-        <!---->
+        <!----->
+    </div>
+    <!---->
     </div>
 @endsection
