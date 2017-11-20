@@ -35,4 +35,6 @@ Route::post('carrinho/finalizar', 'PedidoController@salvar')->name('carrinho_fin
 
 Route::get('conta/{id}', 'UsuariosController@conta')->name('conta');
 
+Route::get('/pedidos', 'PedidoController@index')->name('meus_pedidos');
+
 Route::post('/users/editar/salvar', 'UsuariosController@salvarEdicao')->name('usuarios_salvar_edicao');

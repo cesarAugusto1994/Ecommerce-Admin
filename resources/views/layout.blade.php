@@ -112,8 +112,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <span class="simpleCart_total"></span></div>
                                 <img src="/images/cart.png" alt=""/></h3>
                         </a>
-                        <p><a href="javascript:;" data-token="{{ csrf_token() }}" class="simpleCart_empty">Empty
-                                Cart</a></p>
+                        <p><a href="javascript:;" data-token="{{ csrf_token() }}" class="simpleCart_empty">Limpar Carrinho</a></p>
 
                     </div>
                 </div>
@@ -175,7 +174,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <ul>
                                                 <li><a href="{{ route('conta', ['id' => auth()->user()->id]) }}">Meus
                                                         dados</a></li>
-                                                <li><a href="products.html">Meus Pedidos</a></li>
+                                                <li><a href="{{ route('meus_pedidos') }}">Meus Pedidos</a></li>
                                                 <li><a class="btn btn-link btn-sm bottom-left"
                                                        href="{{ route('logout') }}">Logout</a></li>
                                             </ul>

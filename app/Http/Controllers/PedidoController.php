@@ -10,6 +10,12 @@ use Request;
 
 class PedidoController extends Controller
 {
+    public function index()
+    {
+        $pedidos = Pedido::where('usuario_id', auth()->user()->id)->get();
+        return view('/pedidos/lista')->with('pedidos', $pedidos);
+    }
+
     public function vendaFinalizada()
     {
         return view('carrinho/finalizar');
