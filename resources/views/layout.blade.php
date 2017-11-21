@@ -87,8 +87,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 <div class="search-box">
                     <div id="sb-search" class="sb-search">
-                        <form action="#" method="post">
-                            <input class="sb-search-input" placeholder="Enter your search term..." type="search"
+                        <form action="{{ route('produtos') }}" method="get">
+                            <input class="sb-search-input" name="search" placeholder="Pesquise pelo produto que deseja..." type="search"
                                    id="search">
                             <input class="sb-search-submit" type="submit" value="">
                             <span class="sb-icon-search"> </span>
@@ -136,7 +136,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <div class="col1">
                                         <div class="h_nav">
                                             <ul>
-                                                <li><a href="#">{{ $categoria['nome'] }}</a></li>
+                                                <li><a href="#">{{ isset($categoria['nome']) ? $categoria['nome'] : "" }}</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -172,11 +172,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <div class="col1">
                                         <div class="h_nav">
                                             <ul>
-                                                <li><a href="{{ route('conta', ['id' => auth()->user()->id]) }}">Meus
-                                                        dados</a></li>
+                                                <li><a href="{{ route('conta', ['id' => auth()->user()->id]) }}">Meus dados</a></li>
                                                 <li><a href="{{ route('meus_pedidos') }}">Meus Pedidos</a></li>
-                                                <li><a class="btn btn-link btn-sm bottom-left"
-                                                       href="{{ route('logout') }}">Logout</a></li>
+                                                <li>
+                                                    <a href="{{ route('logout') }}"
+                                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                        Logout
+                                                    </a>
+
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                        {{ csrf_field() }}
+                                                    </form>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -196,7 +204,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 @yield('content')
 
-<div class="footer w3layouts" style="margin-top: 300px">
+<div class="footer w3layouts" style="margin-top: 200px">
     <div class="container">
         <div class="footer-top-at w3">
 

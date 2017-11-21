@@ -74,7 +74,7 @@
                         @if(auth()->guest())
                             <a class="order" href="{{ url('/login') }}">Deve Estar Logado para Finalizar Venda</a>
                             @else
-                        <button type="submit" class="order btn btn-success" href="#">Finalizar</button>
+                            <button type="submit" class="order btn btn-success btn-lg" href="#">Finalizar</button>
                         @endif
                     </form>
                 @endif

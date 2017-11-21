@@ -55,9 +55,15 @@
 						</div>
 
 						<h5 class="item_price">R$ {{ $produto->valor }}</h5>
+
 						<p>{{ $produto->descricao }} </p>
 
-						<a data-produto="{{ $produto->id }}" data-quantidade="1" class="add-cart item_add" data-token="{{ csrf_token() }}">Adicionar ao Carrinho</a>
+						@if($produto->quantidade > 0)
+							<a href="{{ route('carrinho') }}" data-produto="{{ $produto->id }}" data-quantidade="1" class="add-cart item_add"
+							   data-token="{{ csrf_token() }}">Adicionar ao Carrinho</a>
+						@else
+							<div class="alert alert-danger"><p class="text-center">PRODUTO ESGOTADO :(</p></div>
+						@endif
 
 					</div>
 				</div>

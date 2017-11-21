@@ -9,7 +9,13 @@ class ProdutoController extends Controller
 {
     public function lista()
     {
-        $produtos = Produto::all();
+        if (Request::has('search')) {
+            $search = Request::get('search');
+            $produtos = Produto::where('nome', 'like', '%' .$search. '%')->orWhere('id', $search)->get();
+        } else {
+            $produtos = Produto::all();
+        }
+
         return view('produtos/list')->with('produtos', $produtos);
     }
 
