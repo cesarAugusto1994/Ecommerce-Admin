@@ -71,7 +71,11 @@
                 @if(\Illuminate\Support\Facades\Session::has('cart'))
                     <form method="POST" action="{{ route('carrinho_finalizar') }}">
                         {{ csrf_field() }}
+                        @if(auth()->guest())
+                            <a class="order" href="{{ url('/login') }}">Deve Estar Logado para Finalizar Venda</a>
+                            @else
                         <button type="submit" class="order btn btn-success" href="#">Finalizar</button>
+                        @endif
                     </form>
                 @endif
             </div>

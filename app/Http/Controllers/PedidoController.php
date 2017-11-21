@@ -40,7 +40,7 @@ class PedidoController extends Controller
             $produto->save();
         });
 
-        Session::flush();
+        Session::forget('cart');
 
         return redirect()->action('PedidoController@vendaFinalizada');
     }

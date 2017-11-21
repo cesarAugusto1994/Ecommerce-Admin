@@ -12,11 +12,11 @@
 	<!-- grow -->
 	<div class="pro-du">
 		<div class="container">
-			<div class="col-md-9 product1">
+			<div class="col-md-12 product1">
 				<div class=" bottom-product">
 
 					@foreach($produtos as $produto)
-						<div class="col-md-6 bottom-cd simpleCart_shelfItem">
+						<div class="col-md-4 bottom-cd simpleCart_shelfItem">
 							<div class="product-at ">
 								<a href="{{ route('item', ['id' => $produto->id,'nome' => $produto->nome]) }}"><img class="img-responsive" style="max-height: 320px;max-width: 320px;min-height: 320px;min-width: 320px" src="{{ $produto->imagens->first()['link'] }}" alt="">
 								<div class="pro-grid">

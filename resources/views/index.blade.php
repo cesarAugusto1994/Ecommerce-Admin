@@ -20,32 +20,22 @@
             <div id="top" class="callbacks_container">
                 <ul class="rslides" id="slider">
                     <li>
-
                         <div class="banner-text">
                             <h3>Seu E-Commerce </h3>
                             <p>Aqui encontrara tudo o que precisar.</p>
-
                         </div>
-
                     </li>
                     <li>
-
                         <div class="banner-text">
                             <h3>Produtos </h3>
                             <p>Todas as Marcas do mercado.</p>
-
-
                         </div>
-
                     </li>
                     <li>
                         <div class="banner-text">
                             <h3>Compre j&aacute;</h3>
                             <p>Nao perca as nossas promocoes.</p>
-
-
                         </div>
-
                     </li>
                 </ul>
             </div>
@@ -58,6 +48,7 @@
             <div class="content">
                 <div class="content-top-bottom">
                     <h2>DESTAQUES</h2>
+                    @if(!empty($principal))
                     <div class="col-md-6 men">
                         <a href="{{ route('item', ['id' => $principal->produto->id, 'nome' => $principal->produto->nome]) }}"
                            class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive"
@@ -118,6 +109,7 @@
                         </div>
                     </div>
                     <div class="clearfix"></div>
+                    @endif
                 </div>
                 <div class="content-top">
                     <h1>NOVOS PRODUTOS</h1>
@@ -135,7 +127,7 @@
                                     </div>
                                 </a>
                                 <p>
-                                    <a href="{{ route('item', ['id' => $produto->id, 'nome' => $produto->nome]) }}">{{ $produto->nome }}</a>
+                                    <a href="{{ route('item', ['id' => $produto->id, 'nome' => $produto->nome]) }}"></a>
                                 </p>
                                 <a href="#" class="item_add">
                                     <p class="number item_price"><i> </i>R$ {{ $produto->valor }}</p>

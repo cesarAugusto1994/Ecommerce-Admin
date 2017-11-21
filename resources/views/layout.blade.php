@@ -196,7 +196,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 @yield('content')
 
-<div class="footer w3layouts" style="margin-top: 400px">
+<div class="footer w3layouts" style="margin-top: 300px">
     <div class="container">
         <div class="footer-top-at w3">
 
