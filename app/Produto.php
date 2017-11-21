@@ -4,6 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Produto
+ * @package App
+ */
 class Produto extends Model
 {
     protected $fillable = ['nome'];

@@ -81,7 +81,7 @@
 								</div>
 							</a>
 						</div>
-						<p class="tun"><span>{{ $produto->nome }}</span><br>{{ $produto->categoria }}</p>
+						<p class="tun"><span>{{ $produto->nome }}</span><br>{{ $produto->categoria->nome }}</p>
 						<div class="ca-rt">
 							<a href="#" class="item_add">
 								<p class="number item_price"><i> </i>R$ {{ $produto->valor }}</p>

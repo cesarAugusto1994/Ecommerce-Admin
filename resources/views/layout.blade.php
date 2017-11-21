@@ -151,7 +151,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <div class="col1">
                                         <div class="h_nav">
                                             <ul>
-                                                <li><a href="#">{{ $marca['nome'] }}</a></li>
+                                                <li><a href="/produtos?marca={{ $marca['id'] }}">{{ $marca['nome'] }}</a></li>
                                             </ul>
                                         </div>
                                     </div>

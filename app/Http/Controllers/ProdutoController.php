@@ -4,12 +4,25 @@ namespace App\Http\Controllers;
 
 use Request;
 use App\Produto;
+use App\Marca;
 
 class ProdutoController extends Controller
 {
     public function lista()
     {
-        if (Request::has('search')) {
+        if (Request::has('marca')) {
+
+            $search = Request::get('marca');
+            $marca = Marca::find($search);
+
+            if (!empty($marca)) {
+                $produtos = $marca->produtos();
+            } else {
+                $produtos = Produto::all();
+            }
+
+
+        } else if (Request::has('search')) {
             $search = Request::get('search');
             $produtos = Produto::where('nome', 'like', '%' .$search. '%')->orWhere('id', $search)->get();
         } else {

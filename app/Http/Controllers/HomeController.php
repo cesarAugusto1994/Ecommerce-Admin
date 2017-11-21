@@ -21,8 +21,8 @@ class HomeController extends Controller
     public function index()
     {
         if (!Cache::has('categorias')) {
-            Cache::put('categorias', array_chunk(Categoria::all()->toArray(), 3), 1200);
-            Cache::put('marcas', Marca::all()->toArray(), 1200);
+            Cache::put('categorias', array_chunk(Categoria::all()->toArray(), 3), 1);
+            Cache::put('marcas', Marca::all()->toArray(), 1);
         }
 
         $produtos = Produto::where('ativo', 1)->take(4)->get()->sortByDesc('id');
